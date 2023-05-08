@@ -5,11 +5,11 @@
 @using Syncfusion.Blazor.Schedule
 @using Syncfusion.Blazor.Data
 
-<SfSchedule TValue="Restful_Services.Models.EventData" Height="550px" SelectedDate="@(new DateTime(2020, 04, 14))" >
-    <ScheduleEventSettings TValue="Restful_Services.Models.EventData" Query="@QueryData" >
-        <SfDataManager Url="http://localhost:9876/odata/" Adaptor="Adaptors.ODataV4Adaptor"></SfDataManager>
+<SfSchedule TValue="EventData" Height="550px" SelectedDate="@(new DateTime(2020, 04, 14))" >
+    <ScheduleEventSettings TValue="EventData" Query="@QueryData" >
+        <SfDataManager Url="https://localhost:44340/odata/" Adaptor="Adaptors.ODataV4Adaptor"></SfDataManager>
     </ScheduleEventSettings>
 </SfSchedule>
 @code {
-    public Query QueryData = new Query().From("ODataV4");
+    public Query QueryData = new Query().From("Events");
 }
