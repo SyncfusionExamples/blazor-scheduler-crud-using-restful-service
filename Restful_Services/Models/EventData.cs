@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RestfulServices.Models
 {
-    public partial class EventData
+    public class EventData
     {
         public int Id { get; set; }
         public string? Subject { get; set; }
