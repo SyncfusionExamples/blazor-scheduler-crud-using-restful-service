@@ -1,15 +1,48 @@
 ﻿@page "/"
-
-
+@using RestfulServices.Models
 @using Syncfusion.Blazor
 @using Syncfusion.Blazor.Schedule
 @using Syncfusion.Blazor.Data
+@using System.Net.Http.Json
+@inject HttpClient Http
 
-<SfSchedule TValue="EventData" Height="550px" SelectedDate="@(new DateTime(2020, 04, 14))" >
-    <ScheduleEventSettings TValue="EventData" Query="@QueryData" >
-        <SfDataManager Url="https://localhost:44340/odata/" Adaptor="Adaptors.ODataV4Adaptor"></SfDataManager>
-    </ScheduleEventSettings>
-</SfSchedule>
+@if (EventsLoaded)
+{
+    <SfSchedule TValue="EventData" Height="550px" SelectedDate="@(new DateTime(2026, 01, 5))">
+        <ScheduleEventSettings TValue="EventData"
+                               DataSource="@Events" >
+        </ScheduleEventSettings>
+    </SfSchedule>
+}
+else
+{
+    <div>Loading events...</div>
+}
 @code {
+    private IEnumerable<EventData> Events = new List<EventData>();
+    private bool EventsLoaded = false;
     public Query QueryData = new Query().From("Events");
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var odataResponse = await Http.GetFromJsonAsync<ODataListResponse<EventData>>(
+                "https://localhost:5001/odata/Events");
+
+            Events = odataResponse?.Value ?? new List<EventData>();
+        }
+        catch
+        {
+            Events = new List<EventData>();
+        }
+        finally
+        {
+            EventsLoaded = true;
+        }
+    }
+    public class ODataListResponse<T>
+    {
+        public List<T> Value { get; set; } = new();
+    }
 }
