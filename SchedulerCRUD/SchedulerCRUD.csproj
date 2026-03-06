@@ -8,4 +8,8 @@
     <PackageReference Include="Syncfusion.Blazor" Version="32.1.25" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Restful_Services\RestfulServices.csproj" />
+  </ItemGroup>
+
 </Project>
