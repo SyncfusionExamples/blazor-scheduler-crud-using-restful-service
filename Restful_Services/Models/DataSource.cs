@@ -8,7 +8,7 @@ namespace RestfulServices.Models
 {
     public static class DataSource
     {
-        public static IList<EventData>? _eventsData { get; set; }
+        private static IList<EventData>? _eventsData { get; set; }
 
         public static IList<EventData> GetEvents()
         {
