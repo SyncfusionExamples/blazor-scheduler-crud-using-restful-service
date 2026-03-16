@@ -7,8 +7,8 @@ This [Syncfusion<sup style="font-size:70%">&reg;</sup>  Blazor Scheduler](https:
     ```bash
     dotnet --version
     ```
-- **SQL Server(https://www.microsoft.com/sql-server/sql-server-downloads)** or LocalDB available. The guide uses LocalDB connection by default.
-- A code editor ([Visual Studio](https://visualstudio.microsoft.com/vs/) / [VS Code](https://code.visualstudio.com/)).
+- **SQL Server** or LocalDB available. The guide uses LocalDB connection by default.
+- A code editor (Visual Studio / VS Code).
 
 ## How to run this application?
 
