@@ -1,0 +1,30 @@
+﻿@page "/"
+@using RestfulServices.Models
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Schedule
+
+@if (EventsLoaded)
+{
+    <SfSchedule TValue="EventData"
+                Height="650px"
+                SelectedDate="@(new DateTime(2026, 01, 5))">
+        <ScheduleEventSettings TValue="EventData" DataSource="@Events">
+            
+        </ScheduleEventSettings>
+    </SfSchedule>
+}
+else
+{
+    <div>Loading events...</div>
+}
+@code {
+    private List<EventData> Events = new();
+    private bool EventsLoaded = false;
+
+    protected override Task OnInitializedAsync()
+    {
+        Events = DataSource.GetEvents()?.ToList() ?? new List<EventData>();
+        EventsLoaded = true;
+        return Task.CompletedTask;
+    }
+}
