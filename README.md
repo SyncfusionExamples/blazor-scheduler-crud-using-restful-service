@@ -1,12 +1,38 @@
 # blazor-scheduler-crud
 
-The repository covers how to manipulate appointments (create, read, update, and delete) using web services in Blazor Scheduler.
+A Blazor application demonstrating how to perform appointment management (create, read, update, and delete operations) using RESTful web services with the Syncfusion Scheduler component and OData V4 integration.
 
-## How to run this application?
+## Features
 
-To run this application, clone the `blazor-scheduler-crud` repository and then navigate to its appropriate path where it has been located in your system. Open the soultion in visual studio 2019 to run both the backend service and frontend scheduler sample. Make sure both the projects are start running.
+- Full CRUD operations on scheduler events using OData V4
+- Microsoft SQL Server database integration via Entity Framework Core
+- RESTful backend service for appointment management
+- Real-time synchronization between frontend and backend
+- Support for event timezones, recurrence rules, and event properties
 
-### Creating DBContext class
+## Prerequisites
+
+- Visual Studio 2019 or later
+- .NET 5.0 or higher
+- SQL Server LocalDB or full SQL Server instance
+- Syncfusion Blazor NuGet packages
+
+## Getting Started
+
+To run this application, clone the `blazor-scheduler-crud` repository and navigate to its path. Open the solution in Visual Studio 2019 to run both the backend service and frontend scheduler sample. Make sure both projects are running simultaneously.
+
+## Project Structure
+
+- **Restful_Services**: ASP.NET Core backend with OData V4 controller for CRUD operations
+- **SchedulerCRUD**: Blazor frontend with SfSchedule component using SfDataManager
+
+## Documentation & Resources
+
+- [Blazor Introduction](https://blazor.syncfusion.com/documentation/introduction)
+- [Syncfusion Blazor Schedule Documentation](https://blazor.syncfusion.com/documentation/schedule/getting-started)
+- [OData V4 Integration Guide](https://help.syncfusion.com/)
+
+## Creating DBContext class
 
 The first step is to create a DBContext class called **ScheduleDataContext** to connect to a Microsoft SQL Server database.
 
@@ -55,9 +81,9 @@ namespace Restful_Services.Models
 }
 ```
 
-### Creating Odata Controller
+## Creating OData Controller
 
- A Odata Controller has to be created which allows Scheduler directly to consume data from the Entity framework. The following code example shows how to perform CRUD operations using Entity Framework.
+An OData Controller has to be created which allows Scheduler to directly consume data from the Entity Framework. The following code example shows how to perform CRUD operations using Entity Framework.
 
 ```csharp
 using System;
@@ -170,9 +196,9 @@ namespace Restful_Services.Controllers
 }
 ```
 
-## Configuring Scheduler component
+## Configuring Scheduler Component
 
-Now you can configure the Scheduler using the `SfDataManager` to interact with the created Odata service and consume the data appropriately. To interact with Odata, you need to use `ODataV4Adaptor`.
+Configure the Scheduler using `SfDataManager` to interact with the created OData service and consume the data appropriately. To interact with OData, use the `ODataV4Adaptor`.
 
 ```csharp
 @using Syncfusion.Blazor
