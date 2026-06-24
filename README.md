@@ -1,6 +1,6 @@
-# blazor-scheduler-crud
+# How to Integrate Blazor Scheduler with OData V4 using RESTful Services
 
-A Blazor application demonstrating how to perform appointment management (create, read, update, and delete operations) using RESTful web services with the Syncfusion Scheduler component and OData V4 integration.
+A Blazor application demonstrating how to perform appointment management (create, read, update, and delete operations) using RESTful web services with the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler) component and OData V4 integration.
 
 ## Features
 
