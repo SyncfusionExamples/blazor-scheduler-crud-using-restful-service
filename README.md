@@ -12,10 +12,9 @@ A Blazor application demonstrating how to perform appointment management (create
 
 ## Prerequisites
 
-- Visual Studio 2019 or later
-- .NET 5.0 or higher
-- SQL Server LocalDB or full SQL Server instance
-- Syncfusion Blazor NuGet packages
+* Visual Studio 2022
+* .NET 10.0
+* SQL Server LocalDB or full SQL Server instance
 
 ## Getting Started
 
@@ -25,6 +24,13 @@ To run this application, clone the `blazor-scheduler-crud` repository and naviga
 
 - **Restful_Services**: ASP.NET Core backend with OData V4 controller for CRUD operations
 - **SchedulerCRUD**: Blazor frontend with SfSchedule component using SfDataManager
+
+## How to run the project
+
+1. Checkout this project to your local machine
+2. Open the solution file using Visual Studio 2022
+3. Build the solution to restore the required NuGet packages
+4. Press `F5` to start the application
 
 ## Documentation & Resources
 
